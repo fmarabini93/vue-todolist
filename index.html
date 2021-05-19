@@ -5,18 +5,26 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <script src="js/vue.js"></script>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&display=swap" rel="stylesheet">
             <link rel="stylesheet" href="css/all.css">
             <link rel="stylesheet" href="css/style.css">
             <title>ToDo List</title>
       </head>
       <body>
             <div id="root">
-                 <ul v-if="list.length > 0">
-                       <li v-for="(item, index) in list" @click="checkDone(index)" :class="item.completed ? 'line-through' : '' ">{{item.text}} <i class="fas fa-times" @click="cancelText(index)"></i></li>
-                 </ul>
-                 <h1 v-else>Well done, nothing left! Just relax <i class="far fa-thumbs-up"></i></h1>
-                 <input type="text" v-model="newText" @keyup.enter="addThing">
-                 <button @click="addThing">Add</button>
+                  <div>
+                        <h1 v-if="list.length > 0">Good morning! Here's what you have to do today:</h1>
+                        <p v-if="list.length > 0">(Click on text to mark things done)</p>
+                  </div>
+                  <ul v-if="list.length > 0">
+                       <li v-for="(item, index) in list" @click="checkDone(index)" :class="item.completed ? 'line-through' : '' ">{{item.text}}</li>
+                  </ul>
+                  <h1 v-else>Well done, nothing left! Just relax <i class="far fa-thumbs-up"></i></h1>
+                  <div>
+                        <input type="text" v-model="newText" @keyup.enter="addThing"><br>
+                        <button @click="addThing">Add</button>
+                  </div>
             </div>
             <script src="js/script.js"></script>
       </body>

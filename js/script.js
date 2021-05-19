@@ -28,12 +28,6 @@ const app = new Vue (
             newText: ""
       },
       methods: {
-            cancelText: function(selectedItem) {
-                  this.list.splice(selectedItem, 1);
-                  if (selectedItem == 0 || selectedItem == this.list.length - 1) {
-                        this.list[selectedItem].completed = true;
-                  }
-            },
             addThing: function() {
                   if (this.newText.trim().length > 0) {
                         this.list.push({
@@ -51,6 +45,9 @@ const app = new Vue (
                               this.list[element].completed = false;
                         }
                   }
+                  setTimeout(()=> {
+                        this.list.splice(element, 1);
+                  },3000)
             }
       }
 

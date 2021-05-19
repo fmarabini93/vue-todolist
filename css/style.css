@@ -1,14 +1,91 @@
-body {
-      height: 100vh;
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
 }
 
-li {
-      cursor: pointer;
+body {
+      font-family: 'Kalam', cursive;
+      font-size: 2em;
+      color: #858585;
+      background-color: #fff300;
 }
-li i {
-      cursor: pointer;
+
+#root {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
 }
 
 .line-through {
       text-decoration: line-through;
+      animation: myCompleted 2s linear forwards;
+}
+
+ul {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+}
+
+li {
+      width: calc(100% / 4 - 60px);
+      padding: 50px;
+      margin: 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #000000;
+      background-color: rgba(0,0,0,0.5);
+      animation: myListItem 3s linear infinite;
+}
+
+input {
+      width: 500px;
+      border: none;
+      border-bottom: 2px solid #d8d8d8;
+      border-radius: 5px;
+      background-color: #fff300;
+      outline: none;
+}
+
+button {
+      width: 100px;
+      height: 100px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 50%;
+      font-family: 'Kalam', cursive;
+      font-size: 1.2em;
+      text-align: center;
+      cursor: pointer;
+      background-color: #fff300;
+}
+button:hover {
+      
+}
+
+@keyframes myListItem {
+      0% {
+            opacity: 1;
+      }
+      50% {
+            opacity: 0.7;
+      }
+      100% {
+            opacity: 1;
+      }
+}
+@keyframes myCompleted {
+      from {
+            opacity: 1;
+      }
+      to {
+            opacity: 0;
+            pointer-events: none;
+      }
 }
