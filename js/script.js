@@ -38,8 +38,8 @@ const app = new Vue (
                               text: this.newText,
                               completed: false           
                         });
-                        this.newText = "";
                   }
+                  this.newText = "";
             },
             checkDone: function(element) {
                   console.log(element);
