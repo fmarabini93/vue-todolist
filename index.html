@@ -21,7 +21,7 @@
                        <li v-for="(item, index) in list" @click="checkDone(index)" :class="item.completed ? 'line-through' : '' ">{{item.text}}</li>
                   </ul>
                   <h1 v-else>Well done, nothing left! Just relax <i class="far fa-thumbs-up"></i></h1>
-                  <div>
+                  <div v-if="list.length > 0">
                         <input type="text" v-model="newText" @keyup.enter="addThing"><br>
                         <button @click="addThing">Add</button>
                   </div>
