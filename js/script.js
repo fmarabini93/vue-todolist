@@ -33,9 +33,12 @@ const app = new Vue (
       methods: {
             cancelText: function(selectedItem) {
                   this.list.splice(selectedItem, 1);
+                  this.list[selectedItem].completed = true;
             },
             addThing: function() {
+                  if (this.newThing.text.trim.length > 0) {
                         this.list.push(this.newThing);
+                  }
             },
             checkDone: function(element) {
                   console.log(element);
