@@ -25,10 +25,7 @@ const app = new Vue (
                               completed: false
                         }
             ],
-            newThing: {
-                  text: "",
-                  completed: false
-            }
+            newText: ""
       },
       methods: {
             cancelText: function(selectedItem) {
@@ -36,8 +33,12 @@ const app = new Vue (
                   this.list[selectedItem].completed = true;
             },
             addThing: function() {
-                  if (this.newThing.text.trim.length > 0) {
-                        this.list.push(this.newThing);
+                  if (this.newText.trim().length > 0) {
+                        this.list.push({
+                              text: this.newText,
+                              completed: false           
+                        });
+                        this.newText = "";
                   }
             },
             checkDone: function(element) {
