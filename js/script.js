@@ -32,7 +32,8 @@ const app = new Vue (
       },
       methods: {
             cancelText: function(selectedItem) {
-                  this.list.splice(this.list[selectedItem], 1);
+                  console.log(selectedItem);
+                  this.list.splice(selectedItem, 1);
             },
             addThing: function() {
                         this.list.push(this.newThing);
