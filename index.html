@@ -12,7 +12,7 @@
       <body>
             <div id="root">
                  <ul v-if="list.length > 0">
-                       <li @click="checkDone(index)" v-for="(item, index) in list" :class="item.completed ? 'line-through' : '' ">{{item.text}} <i class="fas fa-times" @click="cancelText(index)"></i></li>
+                       <li v-for="(item, index) in list" @click="checkDone(index)" :class="item.completed ? 'line-through' : '' ">{{item.text}} <i class="fas fa-times" @click="cancelText(index)"></i></li>
                  </ul>
                  <h1 v-else>Well done, nothing left! Just relax <i class="far fa-thumbs-up"></i></h1>
                  <input type="text" v-model="newText" @keyup.enter="addThing">

@@ -30,7 +30,9 @@ const app = new Vue (
       methods: {
             cancelText: function(selectedItem) {
                   this.list.splice(selectedItem, 1);
-                  this.list[selectedItem].completed = true;
+                  if (selectedItem == 0 || selectedItem == this.list.length - 1) {
+                        this.list[selectedItem].completed = true;
+                  }
             },
             addThing: function() {
                   if (this.newText.trim().length > 0) {
@@ -42,11 +44,12 @@ const app = new Vue (
                   this.newText = "";
             },
             checkDone: function(element) {
-                  console.log(element);
-                  if (this.list[element].completed == false) {
-                        this.list[element].completed = true;
-                  } else {
-                        this.list[element].completed = false;
+                  if (element < this.list.length) {
+                        if (this.list[element].completed == false) {
+                              this.list[element].completed = true;
+                        } else {
+                              this.list[element].completed = false;
+                        }
                   }
             }
       }
