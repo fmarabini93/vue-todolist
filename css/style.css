@@ -2,7 +2,14 @@ body {
       height: 100vh;
 }
 
+li {
+      cursor: pointer;
+}
 li i {
       cursor: pointer;
       color: red;
+}
+
+.line-through {
+      text-decoration: line-through;
 }

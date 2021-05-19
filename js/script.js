@@ -36,6 +36,14 @@ const app = new Vue (
             },
             addThing: function() {
                         this.list.push(this.newThing);
+            },
+            checkDone: function(element) {
+                  console.log(element);
+                  if (this.list[element].completed == false) {
+                        this.list[element].completed = true;
+                  } else {
+                        this.list[element].completed = false;
+                  }
             }
       }
 
