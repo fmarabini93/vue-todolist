@@ -1,0 +1,8 @@
+body {
+      height: 100vh;
+}
+
+li i {
+      cursor: pointer;
+      color: red;
+}

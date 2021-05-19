@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="js/vue.js"></script>
+            <link rel="stylesheet" href="css/all.css">
+            <link rel="stylesheet" href="css/style.css">
+            <title>ToDo List</title>
+      </head>
+      <body>
+            <div id="root">
+                 <ul v-if="list.length > 0">
+                       <li v-for="(item, index) in list">{{item.text}}<i class="fas fa-times" @click="cancelText(index)"></i></li>
+                 </ul>
+                 <h1 v-else>Well done, nothing left! Just relax <i class="far fa-thumbs-up"></i></h1>
+                 <input type="text" v-model="newThing.text" @keyup.enter="addThing">
+                 <button @click="addThing">Add</button>
+            </div>
+            <script src="js/script.js"></script>
+      </body>
+</html>
