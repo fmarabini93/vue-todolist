@@ -39,11 +39,7 @@ const app = new Vue (
             },
             checkDone: function(element) {
                   if (element < this.list.length) {
-                        if (this.list[element].completed == false) {
-                              this.list[element].completed = true;
-                        } else {
-                              this.list[element].completed = false;
-                        }
+                        this.list[element].completed = !this.list[element].completed;
                   }
                   setTimeout(()=> {
                         this.list.splice(element, 1);
